@@ -14,8 +14,14 @@ def db_insert_product(collection, product):
 def db_find_one(collection, query={}):
     return collection.find_one(query)
 
+def db_find_all(collection, query={}):
+    return collection.find(query)
+
 def db_update_one(collection, query={}):
-    return collection.update(query)
+    return collection.update_one(query)
+
+def db_delete_one(collection, query={}):
+    return collection.find_one_and_delete(query)
 
 if __name__ == '__main__':
     print("MongoClient imported successfully!")
