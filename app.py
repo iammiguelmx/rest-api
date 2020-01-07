@@ -81,16 +81,6 @@ def deleteProduct(name):
         }
     )
 
-# Update Data Route
-@app.route('/products/<string:name>', methods=['PUT'])
-def editProduct(name):
-    return jsonify(
-        {
-            'status': 200,
-            'mesagge': 'Updated'
-        }
-    )
-
 
 @app.errorhandler(404)
 def not_found():

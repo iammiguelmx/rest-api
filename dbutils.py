@@ -23,6 +23,5 @@ def db_update_one(collection, query={}):
 def db_delete_one(collection, query={}):
     return collection.find_one_and_delete(query)
 
-
 if __name__ == '__main__':
     print("MongoClient imported successfully!")
