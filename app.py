@@ -82,16 +82,5 @@ def deleteProduct(name):
     )
 
 
-@app.errorhandler(404)
-def not_found():
-    message = {
-        'status': 404,
-        'message': 'Not Found ' 
-    }
-    response = jsonify(message)
-    response.status_code = 404
-
-    return response
-
 if __name__ == '__main__':
     app.run(debug=True, port=4000)
