@@ -6,7 +6,6 @@ from dbutils import db_find_one
 from dbutils import db_update_one
 from dbutils import db_find_all
 from dbutils import db_delete_one
-from dbutils import db_find_and_update
 
 app = Flask(__name__)
 
@@ -85,12 +84,6 @@ def deleteProduct(name):
 # Update Data Route
 @app.route('/products/<string:name>', methods=['PUT'])
 def editProduct(name):
-    products = db_find_all(products)
-    product = [product for product in product if product['name'] == name]
-    product[0]['name'] = request.json.get('name', product[0]['name'])
-    product[0]['price'] = request.json.get('price',product[0]['price'])       
-    product[0]['quantity'] = request.json.get('quantity', product[0]['quantity'])
-    db_find_and_update(product[0])
     return jsonify(
         {
             'status': 200,

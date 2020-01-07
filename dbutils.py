@@ -23,8 +23,6 @@ def db_update_one(collection, query={}):
 def db_delete_one(collection, query={}):
     return collection.find_one_and_delete(query)
 
-def db_find_and_update(collection,product):
-    return collection.update_many(collection, product)
 
 if __name__ == '__main__':
     print("MongoClient imported successfully!")
